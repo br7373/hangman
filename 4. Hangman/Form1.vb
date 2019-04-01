@@ -60,12 +60,18 @@
             labels(i).show()
         Next
 
-        For i As Byte = 0 To 9
-            warray = word.Substring(word.IndexOf(" ") + 1, 1)
+        'For i As Byte = 0 To 9
+        '    warray = word.Substring(word.IndexOf(" ") + 1, 1)
+        'Next
+
+        '  lblTest.Text = warray
+
+        For i As Byte = 0 To word.Length - 1
+            warray(i) = UCase(word)
+            warray(i) = word.Substring(word.IndexOf(" ") + i, 1)
         Next
+        lblTest.Text = warray.Length
 
-
-        lblTest.Text = warray
 
 
     End Sub
@@ -75,7 +81,6 @@
         letter = lstWords.SelectedItem
         lstClicked.Items.Add(letter)
         lstWords.Items.Remove(letter)
-
 
 
         ' wcount += 1

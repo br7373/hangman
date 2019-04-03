@@ -153,7 +153,7 @@ Partial Class Form1
         Me.lbl1.Name = "lbl1"
         Me.lbl1.Size = New System.Drawing.Size(13, 13)
         Me.lbl1.TabIndex = 2
-        Me.lbl1.Text = "1"
+        Me.lbl1.Text = "_"
         Me.lbl1.Visible = False
         '
         'lbl2
@@ -163,7 +163,7 @@ Partial Class Form1
         Me.lbl2.Name = "lbl2"
         Me.lbl2.Size = New System.Drawing.Size(13, 13)
         Me.lbl2.TabIndex = 3
-        Me.lbl2.Text = "2"
+        Me.lbl2.Text = "_"
         Me.lbl2.Visible = False
         '
         'lbl3
@@ -173,7 +173,7 @@ Partial Class Form1
         Me.lbl3.Name = "lbl3"
         Me.lbl3.Size = New System.Drawing.Size(13, 13)
         Me.lbl3.TabIndex = 4
-        Me.lbl3.Text = "3"
+        Me.lbl3.Text = "_"
         Me.lbl3.Visible = False
         '
         'lbl4
@@ -183,7 +183,7 @@ Partial Class Form1
         Me.lbl4.Name = "lbl4"
         Me.lbl4.Size = New System.Drawing.Size(13, 13)
         Me.lbl4.TabIndex = 5
-        Me.lbl4.Text = "4"
+        Me.lbl4.Text = "_"
         Me.lbl4.Visible = False
         '
         'lbl5
@@ -193,7 +193,7 @@ Partial Class Form1
         Me.lbl5.Name = "lbl5"
         Me.lbl5.Size = New System.Drawing.Size(13, 13)
         Me.lbl5.TabIndex = 6
-        Me.lbl5.Text = "5"
+        Me.lbl5.Text = "_"
         Me.lbl5.Visible = False
         '
         'lbl6
@@ -203,7 +203,7 @@ Partial Class Form1
         Me.lbl6.Name = "lbl6"
         Me.lbl6.Size = New System.Drawing.Size(13, 13)
         Me.lbl6.TabIndex = 7
-        Me.lbl6.Text = "6"
+        Me.lbl6.Text = "_"
         Me.lbl6.Visible = False
         '
         'lbl7
@@ -213,7 +213,7 @@ Partial Class Form1
         Me.lbl7.Name = "lbl7"
         Me.lbl7.Size = New System.Drawing.Size(13, 13)
         Me.lbl7.TabIndex = 8
-        Me.lbl7.Text = "7"
+        Me.lbl7.Text = "_"
         Me.lbl7.Visible = False
         '
         'lbl8
@@ -223,7 +223,7 @@ Partial Class Form1
         Me.lbl8.Name = "lbl8"
         Me.lbl8.Size = New System.Drawing.Size(13, 13)
         Me.lbl8.TabIndex = 9
-        Me.lbl8.Text = "8"
+        Me.lbl8.Text = "_"
         Me.lbl8.Visible = False
         '
         'lbl9
@@ -233,7 +233,7 @@ Partial Class Form1
         Me.lbl9.Name = "lbl9"
         Me.lbl9.Size = New System.Drawing.Size(13, 13)
         Me.lbl9.TabIndex = 10
-        Me.lbl9.Text = "9"
+        Me.lbl9.Text = "_"
         Me.lbl9.Visible = False
         '
         'lbl10
@@ -241,9 +241,9 @@ Partial Class Form1
         Me.lbl10.AutoSize = True
         Me.lbl10.Location = New System.Drawing.Point(570, 300)
         Me.lbl10.Name = "lbl10"
-        Me.lbl10.Size = New System.Drawing.Size(19, 13)
+        Me.lbl10.Size = New System.Drawing.Size(13, 13)
         Me.lbl10.TabIndex = 11
-        Me.lbl10.Text = "10"
+        Me.lbl10.Text = "_"
         Me.lbl10.Visible = False
         '
         'btnNew

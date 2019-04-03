@@ -2,7 +2,7 @@
     Dim word As String 'input
     Dim body As New Collection
     Dim wcount As Byte '= 1
-    Dim warray(9) As String
+    Dim warray(9) As Char
     Dim labels As New Collection
     Dim guess As String
     Dim found As Boolean 'checks if the letter selected from the listbox is found or not
@@ -60,18 +60,9 @@
             labels(i).show()
         Next
 
-        'For i As Byte = 0 To 9
-        '    warray = word.Substring(word.IndexOf(" ") + 1, 1)
-        'Next
-
-        '  lblTest.Text = warray
-
         For i As Byte = 0 To word.Length - 1
-            warray(i) = UCase(word)
-            warray(i) = word.Substring(word.IndexOf(" ") + i, 1)
+            warray(i) = word.Substring(i, 1)
         Next
-        lblTest.Text = warray.Length
-
 
 
     End Sub
@@ -83,23 +74,38 @@
         lstWords.Items.Remove(letter)
 
 
+        For i As Byte = 0 To word.Length - 1
+            warray(i) = word.Substring(i, 1)
+
+            If letter = warray(i) Then
+                found = True
+            Else
+                found = False
+            End If
+            If found = True Then
+                labels(i).text = warray(i)
+            End If
+        Next
+
+
+
         ' wcount += 1
 
         'If wcount = 1 Then
-        '    lineH.Visible = True
+        'lineH.Visible = True
         'ElseIf wcount = 2 Then
-        '    lineB.Visible = True
+        'lineB.Visible = True
         'ElseIf wcount = 3 Then
-        '    lineLA.Visible = True
+        'lineLA.Visible = True
         'ElseIf wcount = 4 Then
-        '    lineRA.Visible = True
+        'lineRA.Visible = True
         'ElseIf wcount = 5 Then
-        '    lineLL.Visible = True
+        'lineLL.Visible = True
         'ElseIf wcount = 6 Then
-        '    lineRL.Visible = True
+        'lineRL.Visible = True
         'ElseIf wcount > 6 Then
-        '    MsgBox("You Lost!")
-        '    'add reset here
+        'MsgBox("You Lost!")
+        ''add reset here
         'End If
 
     End Sub

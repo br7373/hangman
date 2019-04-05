@@ -2,13 +2,11 @@
     Dim word As String 'input
     Dim body As New Collection
     Dim wcount As Byte '= 1
+    Dim ecount As Byte
     Dim warray(9) As Char
     Dim labels As New Collection
-    Dim guess As String
     Dim found As Boolean 'checks if the letter selected from the listbox is found or not
     Dim letter As String 'for putting selected numbers in invisible list box   
-
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'right and left leg
         lineRL.Visible = False
@@ -44,13 +42,13 @@
         labels.Add(lbl9)
         labels.Add(lbl10)
 
-        'adding the body parts into an array
-        body.Add(lineRL)
-        body.Add(lineLL)
-        body.Add(lineRA)
-        body.Add(lineLA)
+        'adding the body parts into the collection
         body.Add(lineH)
         body.Add(lineB)
+        body.Add(lineRA)
+        body.Add(lineLA)
+        body.Add(lineRL)
+        body.Add(lineLL)
 
         Do
             word = InputBox("Enter a word that is 10 letters or less.")
@@ -61,9 +59,8 @@
         Next
 
         For i As Byte = 0 To word.Length - 1
-            warray(i) = word.Substring(i, 1)
+            warray(i) = UCase(word.Substring(i, 1))
         Next
-
 
     End Sub
     Private Sub lstWords_Click(sender As Object, e As EventArgs) Handles lstWords.Click
@@ -73,45 +70,76 @@
         lstClicked.Items.Add(letter)
         lstWords.Items.Remove(letter)
 
-
         For i As Byte = 0 To word.Length - 1
-            warray(i) = word.Substring(i, 1)
-
             If letter = warray(i) Then
                 found = True
-            Else
+            ElseIf letter <> warray(i) Then
                 found = False
             End If
             If found = True Then
-                labels(i).text = warray(i)
+                labels(i + 1).text = warray(i)
             End If
         Next
 
+        If found = False Then
+            wcount += 1
+            body(wcount).visible = True
+            If wcount > 7 Then
+                MsgBox("You lose")
+            End If
+        End If
+
+        If found = True Then
+            wcount -= 1
+
+        End If
+
+        '   body(wcount).visible = True
+
+        '  For i As Byte = 0 To 6
+
+        '  Next
 
 
-        ' wcount += 1
+        lblTest2.Text = wcount
+
+        'If found = True Then
+        '    lblTest.Text = "found"
+        '    MsgBox("You Guessed the Word Correctly!")
+        '    wcount = 0
+        'End If
 
         'If wcount = 1 Then
-        'lineH.Visible = True
+        '    lineH.Visible = True
+        '    Exit Sub
         'ElseIf wcount = 2 Then
-        'lineB.Visible = True
+        '    lineB.Visible = True
+        '    Exit Sub
         'ElseIf wcount = 3 Then
-        'lineLA.Visible = True
+        '    lineLA.Visible = True
+        '    Exit Sub
         'ElseIf wcount = 4 Then
-        'lineRA.Visible = True
+        '    lineRA.Visible = True
+        '    Exit Sub
         'ElseIf wcount = 5 Then
-        'lineLL.Visible = True
+        '    lineLL.Visible = True
+        '    Exit Sub
         'ElseIf wcount = 6 Then
-        'lineRL.Visible = True
+        '    lineRL.Visible = True
+        '    Exit Sub
         'ElseIf wcount > 6 Then
-        'MsgBox("You Lost!")
-        ''add reset here
+        '    MsgBox("You Lost!")
+        '    Exit Sub
         'End If
+
 
     End Sub
 
     Private Sub reset()
-
+        wcount = 0
+        For i As Byte = 0 To 5
+            body(i).visible = False
+        Next
 
     End Sub
 End Class

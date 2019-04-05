@@ -47,6 +47,7 @@ Partial Class Form1
         Me.btnNew = New System.Windows.Forms.Button()
         Me.lstClicked = New System.Windows.Forms.ListBox()
         Me.lblTest = New System.Windows.Forms.Label()
+        Me.lblTest2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ShapeContainer1
@@ -273,11 +274,21 @@ Partial Class Form1
         Me.lblTest.TabIndex = 14
         Me.lblTest.Text = "Label1"
         '
+        'lblTest2
+        '
+        Me.lblTest2.AutoSize = True
+        Me.lblTest2.Location = New System.Drawing.Point(131, 379)
+        Me.lblTest2.Name = "lblTest2"
+        Me.lblTest2.Size = New System.Drawing.Size(39, 13)
+        Me.lblTest2.TabIndex = 15
+        Me.lblTest2.Text = "Label1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(735, 450)
+        Me.Controls.Add(Me.lblTest2)
         Me.Controls.Add(Me.lblTest)
         Me.Controls.Add(Me.lstClicked)
         Me.Controls.Add(Me.btnNew)
@@ -325,4 +336,5 @@ Partial Class Form1
     Friend WithEvents btnNew As Button
     Friend WithEvents lstClicked As ListBox
     Friend WithEvents lblTest As Label
+    Friend WithEvents lblTest2 As Label
 End Class

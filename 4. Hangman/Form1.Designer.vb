@@ -310,18 +310,6 @@ Partial Class Form1
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
-    Friend WithEvents LineShape9 As PowerPacks.LineShape
-    Friend WithEvents LineShape8 As PowerPacks.LineShape
-    Friend WithEvents LineShape7 As PowerPacks.LineShape
-    Friend WithEvents LineShape6 As PowerPacks.LineShape
-    Friend WithEvents lineRA As PowerPacks.LineShape
-    Friend WithEvents lineLA As PowerPacks.LineShape
-    Friend WithEvents lineH As PowerPacks.OvalShape
-    Friend WithEvents lineLL As PowerPacks.LineShape
-    Friend WithEvents lineRL As PowerPacks.LineShape
-    Friend WithEvents lineB As PowerPacks.LineShape
     Friend WithEvents lstWords As ListBox
     Friend WithEvents lbl1 As Label
     Friend WithEvents lbl2 As Label
@@ -337,4 +325,15 @@ Partial Class Form1
     Friend WithEvents lstClicked As ListBox
     Friend WithEvents lblTest As Label
     Friend WithEvents lblTest2 As Label
+    Private WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
+    Private WithEvents LineShape9 As PowerPacks.LineShape
+    Private WithEvents LineShape8 As PowerPacks.LineShape
+    Private WithEvents LineShape7 As PowerPacks.LineShape
+    Private WithEvents LineShape6 As PowerPacks.LineShape
+    Private WithEvents lineRA As PowerPacks.LineShape
+    Private WithEvents lineLA As PowerPacks.LineShape
+    Private WithEvents lineH As PowerPacks.OvalShape
+    Private WithEvents lineLL As PowerPacks.LineShape
+    Private WithEvents lineRL As PowerPacks.LineShape
+    Private WithEvents lineB As PowerPacks.LineShape
 End Class

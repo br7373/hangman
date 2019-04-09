@@ -2,11 +2,25 @@
     Dim word As String 'input
     Dim body As New Collection
     Dim wcount As Byte '= 1
-    Dim ecount As Byte
+    Dim ccount As Byte
     Dim warray(9) As Char
     Dim labels As New Collection
     Dim found As Boolean 'checks if the letter selected from the listbox is found or not
     Dim letter As String 'for putting selected numbers in invisible list box   
+
+    Private Sub input()
+        Do
+            word = InputBox("Enter a word that is 10 letters or less.")
+        Loop While (IsNumeric(word) = True Or word = "")
+
+        For i As Byte = 1 To word.Count
+            labels(i).show()
+        Next
+
+        For i As Byte = 0 To word.Length - 1
+            warray(i) = UCase(word.Substring(i, 1))
+        Next
+    End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'right and left leg
         lineRL.Visible = False
@@ -50,17 +64,7 @@
         body.Add(lineRL)
         body.Add(lineLL)
 
-        Do
-            word = InputBox("Enter a word that is 10 letters or less.")
-        Loop While (IsNumeric(word) = True Or word = "")
-
-        For i As Byte = 1 To word.Count
-            labels(i).show()
-        Next
-
-        For i As Byte = 0 To word.Length - 1
-            warray(i) = UCase(word.Substring(i, 1))
-        Next
+        input()
 
     End Sub
     Private Sub lstWords_Click(sender As Object, e As EventArgs) Handles lstWords.Click
@@ -81,18 +85,37 @@
             End If
         Next
 
+        If found = True Then
+            ccount += 1
+        End If
+
+        If ccount = word.Length - 1 Then
+            MsgBox("You Win!")
+        End If
+
+
         If found = False Then
             wcount += 1
-            body(wcount).visible = True
-            If wcount > 7 Then
-                MsgBox("You lose")
-            End If
+            Select Case wcount
+                Case 1
+                    lineH.Visible = True
+                Case 2
+                    lineB.Visible = True
+                Case 3
+                    lineLA.Visible = True
+                Case 4
+                    lineRA.Visible = True
+                Case 5
+                    lineLL.Visible = True
+                Case 6
+                    lineRL.Visible = True
+                    MsgBox("You lose!")
+            End Select
         End If
 
-        If found = True Then
-            wcount -= 1
 
-        End If
+
+
 
         '   body(wcount).visible = True
 
@@ -109,37 +132,22 @@
         '    wcount = 0
         'End If
 
-        'If wcount = 1 Then
-        '    lineH.Visible = True
-        '    Exit Sub
-        'ElseIf wcount = 2 Then
-        '    lineB.Visible = True
-        '    Exit Sub
-        'ElseIf wcount = 3 Then
-        '    lineLA.Visible = True
-        '    Exit Sub
-        'ElseIf wcount = 4 Then
-        '    lineRA.Visible = True
-        '    Exit Sub
-        'ElseIf wcount = 5 Then
-        '    lineLL.Visible = True
-        '    Exit Sub
-        'ElseIf wcount = 6 Then
-        '    lineRL.Visible = True
-        '    Exit Sub
-        'ElseIf wcount > 6 Then
-        '    MsgBox("You Lost!")
-        '    Exit Sub
-        'End If
-
-
     End Sub
 
     Private Sub reset()
         wcount = 0
+        ccount = 0
+        found = False
         For i As Byte = 0 To 5
-            body(i).visible = False
+            body(i + 1).visible = False
         Next
 
+        input()
+
+
+    End Sub
+
+    Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
+        reset()
     End Sub
 End Class
